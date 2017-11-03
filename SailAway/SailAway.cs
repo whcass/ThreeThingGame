@@ -18,11 +18,11 @@ namespace SailAway
 
         List<Sprite> gameSprites = new List<Sprite>();
 
-        public SailAway(XmlDocument pInputFile)
+        public SailAway()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            mLevelXml = pInputFile;
+            //mLevelXml = pInputFile;
         }
 
         protected override void Initialize()
