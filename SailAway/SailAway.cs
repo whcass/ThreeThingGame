@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 using System.Xml;
 
@@ -12,6 +13,8 @@ namespace SailAway
         public XmlDocument mLevelXml;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        Player player;
 
         List<Sprite> gameSprites = new List<Sprite>();
 
@@ -43,7 +46,7 @@ namespace SailAway
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Texture2D playerTexture = GenerateRedBox(32,32);
-            Player player = new Player(playerTexture, 100, 100);
+            player = new Player(playerTexture, 100, 100);
 
             gameSprites.Add(player);
 
@@ -55,10 +58,28 @@ namespace SailAway
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back ==
-                ButtonState.Pressed || Keyboard.GetState().IsKeyDown(
-                    Keys.Escape))
+            KeyboardState keys = Keyboard.GetState();
+            if (keys.IsKeyDown(Keys.Escape))
+            {
                 Exit();
+            }
+
+            if (keys.IsKeyDown(Keys.D))
+            {
+                player.SetMoveState("right");
+            }
+            else if (keys.IsKeyDown(Keys.A))
+            {
+                player.SetMoveState("left");
+            }
+            else
+            {
+                player.SetMoveState("stopped");
+            }
+
+            Console.WriteLine(player.GetMoveState());
+            player.Update(1.0f / 60.0f);
+
             base.Update(gameTime);
         }
 

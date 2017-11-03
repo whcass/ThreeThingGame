@@ -30,5 +30,10 @@ namespace SailAway
             Rectangle.Y = (int)Math.Round(YPos);
             spriteBatch.Draw(Texture, Rectangle,Color.White);
         }
+
+        public virtual void Update(float deltaTime)
+        {
+
+        }
     }
 }
