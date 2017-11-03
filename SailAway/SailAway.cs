@@ -77,7 +77,13 @@ namespace SailAway
                 player.SetMoveState("stopped");
             }
 
-            Console.WriteLine(player.GetMoveState());
+            if (keys.IsKeyDown(Keys.Space))
+            {
+                player.SetJumpStateIfWeCan();
+            }
+
+            //Console.WriteLine(player.GetMoveState());
+            //Console.WriteLine(player.GetJumpState());
             player.Update(1.0f / 60.0f);
 
             base.Update(gameTime);
