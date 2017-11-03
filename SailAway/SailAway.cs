@@ -64,10 +64,14 @@ namespace SailAway
 
         protected override void Draw(GameTime gameTime)
         {
-            spriteBatch.Begin();
-            
-            spriteBatch.End();
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            spriteBatch.Begin();
+            foreach(Sprite s in gameSprites)
+            {
+                s.Draw(spriteBatch);
+            }
+            spriteBatch.End();
+            
             base.Draw(gameTime);
         }
     }
