@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/528945/Documents/GIT/repo/XmlTool/CrackerChase - lab/CrackerChase/Content/Burp.wav</SourceFile>
-  <SourceTime>2017-11-03T18:09:04.6942973+00:00</SourceTime>
-  <DestFile>C:/Users/528945/Documents/GIT/repo/XmlTool/CrackerChase - lab/CrackerChase/Content/bin/Windows/Burp.xnb</DestFile>
-  <DestTime>2017-11-03T21:48:50.5689137+00:00</DestTime>
+  <SourceFile>C:/3TG-2017/FooReal3TG/FooReal3TG/SailAway/Content/Burp.wav</SourceFile>
+  <SourceTime>2017-10-24T12:10:07.558217+01:00</SourceTime>
+  <DestFile>C:/3TG-2017/FooReal3TG/FooReal3TG/SailAway/Content/bin/Windows/Burp.xnb</DestFile>
+  <DestTime>2017-11-03T20:41:52.1103079+00:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
