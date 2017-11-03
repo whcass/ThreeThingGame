@@ -30,10 +30,10 @@ namespace SailAway
             base.Initialize();
         }
 
-        protected Texture2D GenerateRedBox(int width, int height)
+        public Texture2D GenerateRedBox(int width, int height)
         {
-            Texture2D texture = new Texture2D(this.GraphicsDevice, width, height);
-            Color[] colorData = new Color[32 * 32];
+            Texture2D texture = new Texture2D(GraphicsDevice, width, height);
+            Color[] colorData = new Color[width * height];
             for (int i = 0; i < (width*height); i++)
                 colorData[i] = Color.Red;
 
