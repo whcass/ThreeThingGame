@@ -1,0 +1,35 @@
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\obj\Debug\SailAway.csprojResolveAssemblyReference.cache
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\obj\Debug\SailAway.csproj.CoreCompileInputs.cache
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SailAway.exe
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SailAway.pdb
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\Fizzio-Library.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\MonoGame.Framework.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SharpDX.MediaFoundation.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SharpDX.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SharpDX.XAudio2.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SharpDX.DXGI.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SharpDX.Direct3D11.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SharpDX.Direct2D1.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SharpDX.XInput.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\Fizzio-Library.pdb
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\bin\Debug\MonoGame.Framework.xml
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\obj\Debug\SailAway.exe
+C:\Users\deade\Documents\Uni-Stuff\Documents\Uni Work\Year 1\paradigms\SVN\acw\SailAway\SailAway\obj\Debug\SailAway.pdb
+G:\TTG\GIT\repo\SailAway\bin\Debug\SailAway.exe
+G:\TTG\GIT\repo\SailAway\bin\Debug\SailAway.pdb
+G:\TTG\GIT\repo\SailAway\bin\Debug\MonoGame.Framework.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\SharpDX.MediaFoundation.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\SharpDX.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\SharpDX.XAudio2.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\SharpDX.DXGI.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\SharpDX.Direct3D11.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\SharpDX.Direct2D1.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\SharpDX.XInput.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\SharpDX.Direct3D9.dll
+G:\TTG\GIT\repo\SailAway\bin\Debug\Fizzio-Library.pdb
+G:\TTG\GIT\repo\SailAway\bin\Debug\MonoGame.Framework.xml
+G:\TTG\GIT\repo\SailAway\obj\Debug\SailAway.csprojResolveAssemblyReference.cache
+G:\TTG\GIT\repo\SailAway\obj\Debug\SailAway.csproj.CoreCompileInputs.cache
+G:\TTG\GIT\repo\SailAway\obj\Debug\SailAway.exe
+G:\TTG\GIT\repo\SailAway\obj\Debug\SailAway.pdb
