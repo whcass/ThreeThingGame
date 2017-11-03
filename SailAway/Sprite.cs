@@ -16,7 +16,6 @@ namespace SailAway
         protected float XPos;
         protected float YPos;
 
-
         public Sprite(Texture2D texture, float xPos, float yPos)
         {
             Texture = texture;

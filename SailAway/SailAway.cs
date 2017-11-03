@@ -24,11 +24,24 @@ namespace SailAway
             base.Initialize();
         }
 
-        
+        protected Texture2D GenerateRedBox(int width, int height)
+        {
+            Texture2D texture = new Texture2D(this.GraphicsDevice, width, height);
+            Color[] colorData = new Color[32 * 32];
+            for (int i = 0; i < (width*height); i++)
+                colorData[i] = Color.Red;
+
+            texture.SetData<Color>(colorData);
+
+            return texture;
+        }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            Texture2D playerTexture = GenerateRedBox(32,32);
+            Player player = new Player(playerTexture, 100, 100);
+
 
 
         }
