@@ -18,11 +18,10 @@
 				<Alpha>1</Alpha>
 			</ColorRGBA>
 			<Coordinates>
-				<x1>1</x1>
-				<x2>200</x2>
-				<y1>1</y1>
-				<y2>200</y2>
+				<x>1</x>
+				<y>1</y>
 			</Coordinates>
+			<Length>3</Length>
 		</Platform>
 		<Platform>
 			<Name>That fucking anoying one thats hard to jump to</Name>
@@ -33,11 +32,10 @@
 				<Alpha>255</Alpha>
 			</ColorRGBA>
 			<Coordinates>
-				<x1>100</x1>
-				<x2>200</x2>
-				<y1>201</y1>
-				<y2>264</y2>
+				<x>100</x>
+				<y>201</y>
 			</Coordinates>
+			<Length>3</Length>
 		</Platform>
 	</Platforms>
 </Level>
