@@ -14,8 +14,8 @@ namespace SailAway
         private MoveState currentMoveState;
 
         private float playerJumpHeight = 128.0F;
-        private float 
 
+        private float playerTargetJumpHeight;
         private bool JumpAvailable;
 
         private float moveSpeed = 3.0F;
