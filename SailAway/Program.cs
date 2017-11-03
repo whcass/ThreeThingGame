@@ -8,10 +8,7 @@ namespace SailAway
     {
         static void Main(string[] args)
         {
-            string filename = args[0];
-            XmlDocument inputFile = new XmlDocument();
-            inputFile.Load(filename);
-            using (var game = new SailAway(inputFile))
+            using (var game = new SailAway())
                 game.Run();
         }
     }
