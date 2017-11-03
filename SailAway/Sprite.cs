@@ -23,5 +23,12 @@ namespace SailAway
             YPos = yPos;
             Rectangle = new Rectangle(0, 0, texture.Width, texture.Height);
         }
+
+        public virtual void Draw(SpriteBatch spriteBatch)
+        {
+            Rectangle.X = (int)Math.Round(XPos);
+            Rectangle.Y = (int)Math.Round(YPos);
+            spriteBatch.Draw(Texture, Rectangle,Color.White);
+        }
     }
 }
