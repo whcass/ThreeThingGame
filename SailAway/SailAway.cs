@@ -64,7 +64,7 @@ namespace SailAway
             {
                 Texture2D mTexture = Content.Load<Texture2D>("Yellow3232");
                 XmlNode CoordinatesNode = lPlatform.SelectSingleNode("Coordinates");//I think it's more effecient to store this location and not write it out four times in the line below but idk.
-                Platform platform = new Platform(mTexture, 32, 32, ChildNodeIntFromParent(lPlatform, "Length"));
+                Platform platform = new Platform(mTexture, ChildNodeIntFromParent(CoordinatesNode,"x"), ChildNodeIntFromParent(CoordinatesNode, "y"), ChildNodeIntFromParent(lPlatform, "Length"));
                 gameSprites.Add(platform);
             }
         }

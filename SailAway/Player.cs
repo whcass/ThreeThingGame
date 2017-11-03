@@ -16,6 +16,7 @@ namespace SailAway
         private float playerJumpHeight = 60.0F;
         private float playerTargetJumpHeight;
         private float floor;
+        private bool gravityOn = true;
 
         private bool JumpAvailable;
         
@@ -43,8 +44,6 @@ namespace SailAway
             currentMoveState = MoveState.NotMoving;
             JumpAvailable = true;
         }
-
-
 
         private void MovePlayer()
         {
@@ -97,11 +96,8 @@ namespace SailAway
 
         public override void Update(float deltaTime)
         {
-
             MovePlayer();
             PlayerJumping();
-
-
         }
 
         public MoveState GetMoveState()
@@ -136,6 +132,19 @@ namespace SailAway
             }
 
             
+        }
+
+        public void AffectPlayerWithGravity()
+        {
+            if (gravityOn)
+            {
+                //if(Player)
+            }
+        }
+
+        public Rectangle GetRectangle()
+        {
+            return Rectangle;
         }
     }
 }
