@@ -27,7 +27,7 @@ namespace SailAway
             NotMoving
         }
 
-        public Player(Texture2D texture, Rectangle rectangle, float xPos, float yPos) : base(texture,xPos,yPos)
+        public Player(Texture2D texture, float xPos, float yPos) : base(texture,xPos,yPos)
         {
             currentJumpState = JumpState.Landed;
             currentMoveState = MoveState.NotMoving;
