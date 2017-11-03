@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level>
+	<Player>
+		<StartPos>
+			<x1>1</x1>
+			<x2>200</x2>
+			<y1>1</y1>
+			<y2>200</y2>
+		</StartPos>
+		<Textures>
+			<Idlel_1>PC_Idle_1</Idlel_1>
+			<Idlel_2>PC_Idle_2</Idlel_2>
+			<Idlel_3>PC_Idle_3</Idlel_3>
+			<Moving_1>PC_Moveing_1</Moving_1>
+			<Moving_2>PC_Moveing_2</Moving_2>
+			<Moving_3>PC_Moveing_3</Moving_3>
+			<Jumping_1>PC_Jumpimg_1</Jumping_1>
+		</Textures>
+	</Player>
+	<Platforms>
+		<Platform>
+			<Name>The big one ;)</Name>
+			<ColorRGBA>
+				<Red>154</Red>
+				<Green>205</Green>
+				<Blue>50</Blue>
+				<Alpha>1</Alpha>
+			</ColorRGBA>
+			<Coordinates>
+				<x>1</x>
+				<y>1</y>
+			</Coordinates>
+			<Textures>
+				<Left>Platform_Left</Left>
+				<Right>Platform_Right</Right>
+				<Centre>Platform_Centre</Centre>
+			</Textures>
+			<Length>3</Length>
+		</Platform>
+		<Platform>
+			<Name>That fucking anoying one thats hard to jump to</Name>
+			<ColorRGBA>
+				<Red>255</Red>
+				<Green>0</Green>
+				<Blue>0</Blue>
+				<Alpha>255</Alpha>
+			</ColorRGBA>
+			<Coordinates>
+				<x>100</x>
+				<y>201</y>
+			</Coordinates>
+			<Textures>
+				<Left>Platform_Left</Left>
+				<Right>Platform_Right</Right>
+				<Centre>Platform_Centre</Centre>
+			</Textures>
+			<Length>3</Length>
+		</Platform>
+	</Platforms>
+</Level>

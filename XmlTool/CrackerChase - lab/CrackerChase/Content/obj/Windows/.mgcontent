@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/cheese.png</File>
+    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/cracker.png</File>
+    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/MessageFont.spritefont</File>
+    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/Tablecloth.png</File>
+    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/Burp.wav</File>
+  </SourceFiles>
+</SourceFileCollection>
