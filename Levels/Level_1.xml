@@ -19,8 +19,8 @@
 		<Platform>
 			<Name>Start Platform</Name>
 			<Coordinates>
-				<x>0</x>
-				<y>448</y>
+				<x>100</x>
+				<y>300</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
