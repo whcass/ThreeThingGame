@@ -345,11 +345,11 @@ namespace CrackerChase
         {
             return NodeString(pParentNode.SelectSingleNode(pNodeName));
         }
-        private static string NodeString(XmlNode pNode)
+        public static string NodeString(XmlNode pNode)
         {
             return pNode.FirstChild.Value;
         }
-        private static int NodeInt(XmlNode pNode)
+        public static int NodeInt(XmlNode pNode)
         {
             return Int32.Parse(pNode.FirstChild.Value);
         }

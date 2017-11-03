@@ -4,10 +4,10 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/cheese.png</File>
-    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/cracker.png</File>
-    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/MessageFont.spritefont</File>
-    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/Tablecloth.png</File>
-    <File>C:/3TG-2017/lab2/CrackerChase - lab/CrackerChase/Content/Burp.wav</File>
+    <File>C:/3TG-2017/FooReal3TG/FooReal3TG/XmlTool/CrackerChase - lab/CrackerChase/Content/cheese.png</File>
+    <File>C:/3TG-2017/FooReal3TG/FooReal3TG/XmlTool/CrackerChase - lab/CrackerChase/Content/cracker.png</File>
+    <File>C:/3TG-2017/FooReal3TG/FooReal3TG/XmlTool/CrackerChase - lab/CrackerChase/Content/MessageFont.spritefont</File>
+    <File>C:/3TG-2017/FooReal3TG/FooReal3TG/XmlTool/CrackerChase - lab/CrackerChase/Content/Tablecloth.png</File>
+    <File>C:/3TG-2017/FooReal3TG/FooReal3TG/XmlTool/CrackerChase - lab/CrackerChase/Content/Burp.wav</File>
   </SourceFiles>
 </SourceFileCollection>

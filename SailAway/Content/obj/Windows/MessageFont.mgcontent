@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/3TG-2017/FooReal3TG/FooReal3TG/XmlTool/CrackerChase - lab/CrackerChase/Content/MessageFont.spritefont</SourceFile>
+  <SourceFile>C:/3TG-2017/FooReal3TG/FooReal3TG/SailAway/Content/MessageFont.spritefont</SourceFile>
   <SourceTime>2017-10-24T12:10:07.620224+01:00</SourceTime>
-  <DestFile>C:/3TG-2017/FooReal3TG/FooReal3TG/XmlTool/CrackerChase - lab/CrackerChase/Content/bin/Windows/MessageFont.xnb</DestFile>
-  <DestTime>2017-11-03T20:02:45.466514+00:00</DestTime>
+  <DestFile>C:/3TG-2017/FooReal3TG/FooReal3TG/SailAway/Content/bin/Windows/MessageFont.xnb</DestFile>
+  <DestTime>2017-11-03T20:41:51.6170193+00:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
