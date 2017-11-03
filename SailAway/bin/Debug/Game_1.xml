@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level>
+	<Player>
+		<StartPos>
+			<x1>1</x1>
+			<x2>200</x2>
+			<y1>1</y1>
+			<y2>200</y2>
+		</StartPos>
+	</Player>
+	<Platforms>
+		<Platform>
+			<Name>The big one ;)</Name>
+			<ColorRGBA>
+				<Red>154</Red>
+				<Green>205</Green>
+				<Blue>50</Blue>
+				<Alpha>1</Alpha>
+			</ColorRGBA>
+			<Coordinates>
+				<x1>1</x1>
+				<x2>200</x2>
+				<y1>1</y1>
+				<y2>200</y2>
+			</Coordinates>
+		</Platform>
+		<Platform>
+			<Name>That fucking anoying one thats hard to jump to</Name>
+			<ColorRGBA>
+				<Red>255</Red>
+				<Green>0</Green>
+				<Blue>0</Blue>
+				<Alpha>255</Alpha>
+			</ColorRGBA>
+			<Coordinates>
+				<x1>100</x1>
+				<x2>200</x2>
+				<y1>201</y1>
+				<y2>264</y2>
+			</Coordinates>
+		</Platform>
+	</Platforms>
+</Level>

@@ -1,18 +1,22 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Xml;
 
 namespace SailAway
 {
+    
     public class SailAway : Game
     {
+        public XmlDocument mLevelXml;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public SailAway()
+        public SailAway(XmlDocument pInputFile)
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            mLevelXml = pInputFile;
         }
 
         protected override void Initialize()
