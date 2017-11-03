@@ -7,6 +7,15 @@
 			<y1>1</y1>
 			<y2>200</y2>
 		</StartPos>
+		<Textures>
+			<Idlel_1>PC_Idle_1</Idlel_1>
+			<Idlel_2>PC_Idle_2</Idlel_2>
+			<Idlel_3>PC_Idle_3</Idlel_3>
+			<Moving_1>PC_Moveing_1</Moving_1>
+			<Moving_2>PC_Moveing_2</Moving_2>
+			<Moving_3>PC_Moveing_3</Moving_3>
+			<Jumping_1>PC_Jumpimg_1</Jumping_1>
+		</Textures>
 	</Player>
 	<Platforms>
 		<Platform>
@@ -21,6 +30,11 @@
 				<x>1</x>
 				<y>1</y>
 			</Coordinates>
+			<Textures>
+				<Left>Platform_Left</Left>
+				<Right>Platform_Right</Right>
+				<Centre>Platform_Centre</Centre>
+			</Textures>
 			<Length>3</Length>
 		</Platform>
 		<Platform>
@@ -35,6 +49,11 @@
 				<x>100</x>
 				<y>201</y>
 			</Coordinates>
+			<Textures>
+				<Left>Platform_Left</Left>
+				<Right>Platform_Right</Right>
+				<Centre>Platform_Centre</Centre>
+			</Textures>
 			<Length>3</Length>
 		</Platform>
 	</Platforms>
