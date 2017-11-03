@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 using System.Xml;
 
 namespace SailAway
@@ -11,6 +12,8 @@ namespace SailAway
         public XmlDocument mLevelXml;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        List<Sprite> gameSprites = new List<Sprite>();
 
         public SailAway(XmlDocument pInputFile)
         {
@@ -42,7 +45,7 @@ namespace SailAway
             Texture2D playerTexture = GenerateRedBox(32,32);
             Player player = new Player(playerTexture, 100, 100);
 
-
+            gameSprites.Add(player);
 
         }
 
@@ -62,6 +65,13 @@ namespace SailAway
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            spriteBatch.Begin();
+            foreach(Sprite s in gameSprites)
+            {
+                s.Draw(spriteBatch);
+            }
+            spriteBatch.End();
+            
             base.Draw(gameTime);
         }
     }
