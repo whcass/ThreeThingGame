@@ -19,7 +19,7 @@ namespace SailAway
         public Sprite(Texture2D texture, float xPos, float yPos)
         {
             Texture = texture;
-            XPos = xPos;
+            XPos = xPos;5
             YPos = yPos;
             Rectangle = new Rectangle(0, 0, texture.Width, texture.Height);
         }
