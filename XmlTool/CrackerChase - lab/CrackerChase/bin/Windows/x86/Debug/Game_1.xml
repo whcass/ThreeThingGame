@@ -2,10 +2,8 @@
 <Level>
 	<Player>
 		<StartPos>
-			<x1>1</x1>
-			<x2>200</x2>
-			<y1>1</y1>
-			<y2>200</y2>
+			<x>1</x>
+			<y>1</y>
 		</StartPos>
 		<Textures>
 			<Idlel_1>PC_Idle_1</Idlel_1>
@@ -19,16 +17,10 @@
 	</Player>
 	<Platforms>
 		<Platform>
-			<Name>The big one ;)</Name>
-			<ColorRGBA>
-				<Red>154</Red>
-				<Green>205</Green>
-				<Blue>50</Blue>
-				<Alpha>1</Alpha>
-			</ColorRGBA>
+			<Name>Start platform</Name>
 			<Coordinates>
-				<x>1</x>
-				<y>1</y>
+				<x>0</x>
+				<y>448</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -38,13 +30,20 @@
 			<Length>3</Length>
 		</Platform>
 		<Platform>
-			<Name>That fucking anoying one thats hard to jump to</Name>
-			<ColorRGBA>
-				<Red>255</Red>
-				<Green>0</Green>
-				<Blue>0</Blue>
-				<Alpha>255</Alpha>
-			</ColorRGBA>
+			<Name>Platform 2</Name>
+			<Coordinates>
+				<x>100</x>
+				<y>201</y>
+			</Coordinates>
+			<Textures>
+				<Left>Platform_Left</Left>
+				<Right>Platform_Right</Right>
+				<Centre>Platform_Centre</Centre>
+			</Textures>
+			<Length>3</Length>
+		</Platform>
+		<Platform>
+			<Name>Platform 3</Name>
 			<Coordinates>
 				<x>100</x>
 				<y>201</y>

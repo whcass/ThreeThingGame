@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Yellow3232.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/PC_Idle_1.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/PC_Idle_2.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/PC_Idle_3.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/PC_Jumping_1.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/PC_Moveing_1.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/PC_Moveing_2.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Platform_Centre.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Platform_Left.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Platform_Right.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Tiger enemy idle.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Tiger enemy walk 1.png</File>
+    <File>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Tiger enemy walk 2.png</File>
+  </SourceFiles>
+</SourceFileCollection>
