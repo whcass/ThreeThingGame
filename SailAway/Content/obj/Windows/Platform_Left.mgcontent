@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Yellow3232.png</SourceFile>
-  <SourceTime>2017-11-03T21:37:10.9759637+00:00</SourceTime>
-  <DestFile>C:/Users/528945/Documents/GIT/repo/SailAway/Content/bin/Windows/Yellow3232.xnb</DestFile>
-  <DestTime>2017-11-04T00:40:53.8238493+00:00</DestTime>
+  <SourceFile>C:/Users/528945/Documents/GIT/repo/SailAway/Content/Platform_Left.png</SourceFile>
+  <SourceTime>2017-11-03T23:11:28+00:00</SourceTime>
+  <DestFile>C:/Users/528945/Documents/GIT/repo/SailAway/Content/bin/Windows/Platform_Left.xnb</DestFile>
+  <DestTime>2017-11-04T00:40:53.9145544+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
