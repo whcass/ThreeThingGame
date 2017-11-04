@@ -33,3 +33,20 @@ G:\TTG\GIT\repo\SailAway\obj\Debug\SailAway.csprojResolveAssemblyReference.cache
 G:\TTG\GIT\repo\SailAway\obj\Debug\SailAway.csproj.CoreCompileInputs.cache
 G:\TTG\GIT\repo\SailAway\obj\Debug\SailAway.exe
 G:\TTG\GIT\repo\SailAway\obj\Debug\SailAway.pdb
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SailAway.exe
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SailAway.pdb
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\MonoGame.Framework.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SharpDX.MediaFoundation.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SharpDX.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SharpDX.XAudio2.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SharpDX.DXGI.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SharpDX.Direct3D11.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SharpDX.Direct2D1.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SharpDX.XInput.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\Fizzio-Library.pdb
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\bin\Debug\MonoGame.Framework.xml
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\obj\Debug\SailAway.csprojResolveAssemblyReference.cache
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\obj\Debug\SailAway.csproj.CoreCompileInputs.cache
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\obj\Debug\SailAway.exe
+C:\Users\webby\OneDrive\Documents\Three Thing Game\repo\SailAway\obj\Debug\SailAway.pdb
