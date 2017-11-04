@@ -11,10 +11,23 @@
 			<Idle_3>PC_Idle_3</Idle_3>
 			<Moving_1>PC_Moveing_1</Moving_1>
 			<Moving_2>PC_Moveing_2</Moving_2>
-			<Moving_3>PC_Moveing_3</Moving_3>
-			<Jumping_1>PC_Jumpimg_1</Jumping_1>
+			<Jumping_1>PC_Jumping_1</Jumping_1>
 		</Textures>
 	</Player>
+	<Flags>
+		<Start>
+			<Coordinates>
+				<x></x>
+				<y></y>
+			</Coordinates>
+		</Start>
+		<End>
+			<Coordinates>
+				<x></x>
+				<y></y>
+			</Coordinates>
+		</End>
+	</Flags>
 	<Platforms>
 		<Platform>
 			<Name>Start platform</Name>
@@ -136,7 +149,7 @@
 		<Platform>
 			<Name>Platform 10</Name>
 			<Coordinates>
-				<x>1600</x>
+				<x>1500</x>
 				<y>352</y>
 			</Coordinates>
 			<Textures>

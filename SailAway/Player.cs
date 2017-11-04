@@ -26,6 +26,11 @@ namespace SailAway
 
         private bool playerCollidedWithFloor;
 
+        private float xReset;
+        private float yReset;
+
+        protected List<Texture2D> Textures;//Anime desu
+
 
         public enum JumpState
         {
@@ -46,6 +51,14 @@ namespace SailAway
             currentJumpState = JumpState.Landed;
             currentMoveState = MoveState.NotMoving;
             JumpAvailable = true;
+            xReset = xPos;
+            yReset = yPos;
+        }
+
+        public void ResetPlayerToStart()
+        {
+            XPos = xReset;
+            YPos = yReset;
         }
 
         public void SetPlayerCollidedWithFloor(bool state)
@@ -192,6 +205,18 @@ namespace SailAway
 
         }
 
+        internal bool CheckForDeath()
+        {
+            if (YPos > 800)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //private bool CheckIfPlatformIsOnEitherSide()
         //{
         //    if(Level)
@@ -218,6 +243,15 @@ namespace SailAway
         public Rectangle GetRectangle()
         {
             return Rectangle;
+        }
+
+        public void AddTexture(Texture2D pTexture)//Anime desu
+        {
+            Textures.Add(pTexture);
+        }
+        public void ChangeCurentTexture()
+        {
+
         }
     }
 }

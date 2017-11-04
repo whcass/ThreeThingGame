@@ -36,7 +36,7 @@ namespace SailAway
 
         // Auxiliary function to move the camera
         public void Move(Vector2 amount)
-        {
+        {   
             _pos += amount;
         }
         // Get set position
@@ -48,6 +48,14 @@ namespace SailAway
 
         public Matrix get_transformation(GraphicsDevice graphicsDevice)
         {
+            if (_pos.X < 0)
+            {
+                _pos.X = 0;
+            }
+            if (_pos.Y > 800)
+            {
+                _pos.Y = 0;
+            }
             _transform =       // Thanks to o KB o for this solution
               Matrix.CreateTranslation(new Vector3(-_pos.X, -_pos.Y, 0)) *
                                          Matrix.CreateRotationZ(Rotation) *

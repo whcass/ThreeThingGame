@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace SailAway
 {
-    
+
     public class SailAway : Game
     {
         public XmlDocument mLevelXml;
@@ -16,8 +16,8 @@ namespace SailAway
         bool playerCollided;
 
         Camera2d cam = new Camera2d();
-        
 
+        const int DEATH_PLANE_HEIGHT = 800;
 
 
         Level level;
@@ -45,7 +45,7 @@ namespace SailAway
         {
             Texture2D texture = new Texture2D(GraphicsDevice, width, height);
             Color[] colorData = new Color[width * height];
-            for (int i = 0; i < (width*height); i++)
+            for (int i = 0; i < (width * height); i++)
                 colorData[i] = Color.Red;
 
             texture.SetData<Color>(colorData);
@@ -56,26 +56,59 @@ namespace SailAway
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            LoadXmlStuff();
+            LoadXmlStuff(mLevelName);
             gameSprites.Add(player);
 
         }
 
-        public void LoadXmlStuff()
+        protected void ReloadLevel()
         {
+            //LoadXmlStuff(mLevelName);
+            player.ResetPlayerToStart();
+        }
+
+        public void LoadXmlStuff(string levelName)
+        {
+            //<SetUp>
             levelPlatformList = new List<Platform>();
             XmlDocument mLevelXml = new XmlDocument();
-            mLevelXml.Load(mLevelName);
+            mLevelXml.Load(levelName);
             XmlNode LevelNode = mLevelXml.FirstChild.NextSibling;
+            //</SetUp>
 
-            Texture2D playerTexture = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Player").SelectSingleNode("Textures").SelectSingleNode("Idle_1")));
-            player = new Player(playerTexture, ChildNodeIntFromParent(LevelNode.SelectSingleNode("Player").SelectSingleNode("StartPos"), "x"), ChildNodeIntFromParent(LevelNode.SelectSingleNode("Player").SelectSingleNode("StartPos"), "y"));
+            //<Player>
+            Texture2D playerTexture_Idle_1 = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Player").SelectSingleNode("Textures").SelectSingleNode("Idle_1")));
+            player = new Player(playerTexture_Idle_1, ChildNodeIntFromParent(LevelNode.SelectSingleNode("Player").SelectSingleNode("StartPos"), "x"), ChildNodeIntFromParent(LevelNode.SelectSingleNode("Player").SelectSingleNode("StartPos"), "y"));
 
+            Texture2D playerTexture_Idle_2 = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Player").SelectSingleNode("Textures").SelectSingleNode("Idle_2")));
+            Texture2D playerTexture_Idle_3 = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Player").SelectSingleNode("Textures").SelectSingleNode("Idle_3")));
+            Texture2D playerTexture_Moving_1 = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Player").SelectSingleNode("Textures").SelectSingleNode("Moving_1")));
+            Texture2D playerTexture_Moving_2 = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Player").SelectSingleNode("Textures").SelectSingleNode("Moving_2")));
+            Texture2D playerTexture_Jumping_1 = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Player").SelectSingleNode("Textures").SelectSingleNode("Jumping_1")));
 
+            //player.AddTexture(playerTexture_Idle_1);
+            //player.AddTexture(playerTexture_Idle_2);
+            //player.AddTexture(playerTexture_Idle_3);
+            //player.AddTexture(playerTexture_Moving_1);
+            //player.AddTexture(playerTexture_Moving_2);
+            //player.AddTexture(playerTexture_Jumping_1);
+            //</Player>
+
+            //<Flags>
+            Texture2D FlagTextureStart = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Flags").SelectSingleNode("Start").SelectSingleNode("Texture")));
+            Texture2D FlagTextureEnd = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Flags").SelectSingleNode("End").SelectSingleNode("Texture")));
+
+            Sprite FlagStartSprite = new Sprite(FlagTextureStart, ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("Start").SelectSingleNode("Coordinates"), "x"), ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("Start").SelectSingleNode("Coordinates"), "y"));
+            Sprite FlagEndSprite = new Sprite(FlagTextureStart, ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("End").SelectSingleNode("Coordinates"), "x"), ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("End").SelectSingleNode("Coordinates"), "y"));
+
+            gameSprites.Add(FlagStartSprite);
+            gameSprites.Add(FlagEndSprite);
+            //</Flags>
+
+            //<Platforms>
             foreach (XmlNode lPlatform in LevelNode.SelectSingleNode("Platforms").ChildNodes)
             {
-                Texture2D mTexture = Content.Load<Texture2D>("Yellow3232");
-                XmlNode CoordinatesNode = lPlatform.SelectSingleNode("Coordinates");//I think it's more effecient to store this location and not write it out four times in the line below but idk.
+                XmlNode CoordinatesNode = lPlatform.SelectSingleNode("Coordinates");
 
                 Texture2D mTextureLeft = Content.Load<Texture2D>(NodeString(lPlatform.SelectSingleNode("Textures").SelectSingleNode("Left")));
                 Texture2D mTextureRight = Content.Load<Texture2D>(NodeString(lPlatform.SelectSingleNode("Textures").SelectSingleNode("Right")));
@@ -103,10 +136,9 @@ namespace SailAway
                         levelPlatformList.Add(mPlatformCentre);
                     }
                 }
-                //Platform platform = new Platform(mTexture, ChildNodeIntFromParent(CoordinatesNode, "x"), ChildNodeIntFromParent(CoordinatesNode, "y"), ChildNodeIntFromParent(lPlatform, "Length"));
-                //gameSprites.Add(platform);
                 level = new Level(levelPlatformList);
             }
+            //</Platforms>
         }
 
         protected override void UnloadContent()
@@ -114,7 +146,11 @@ namespace SailAway
         }
 
         protected override void Update(GameTime gameTime)
-        {                        
+        {
+            if (player.CheckForDeath())
+            {
+                ReloadLevel();
+            }
             KeyboardState keys = Keyboard.GetState();
             if (keys.IsKeyDown(Keys.Escape))
             {
@@ -147,6 +183,11 @@ namespace SailAway
             player.Update(1.0f / 60.0f);
 
             base.Update(gameTime);
+        }
+
+        protected void NextLevel()
+        {
+
         }
 
         protected override void Draw(GameTime gameTime)

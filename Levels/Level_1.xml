@@ -3,7 +3,7 @@
 	<Player>
 		<StartPos>
 			<x>0</x>
-			<y>410</y>
+			<y>415</y>
 		</StartPos>
 		<Textures>
 			<Idle_1>PC_Idle_1</Idle_1>
@@ -11,9 +11,25 @@
 			<Idle_3>PC_Idle_3</Idle_3>
 			<Moving_1>PC_Moveing_1</Moving_1>
 			<Moving_2>PC_Moveing_2</Moving_2>
-			<Jumping_1>PC_Jumpimg_1</Jumping_1>
+			<Jumping_1>PC_Jumping_1</Jumping_1>
 		</Textures>
 	</Player>
+	<Flags>
+		<Start>
+			<Coordinates>
+				<x>0</x>
+				<y>416</y>
+			</Coordinates>
+			<Texture>FlagStart</Texture>
+		</Start>
+		<End>
+			<Coordinates>
+				<x>1886</x>
+				<y>187</y>
+			</Coordinates>
+			<Texture>FlagEnd</Texture>
+		</End>
+	</Flags>
 	<Platforms>
 		<Platform>
 			<Name>Start Platform</Name>
@@ -122,7 +138,7 @@
 				<Platform>
 			<Name>Platform 9</Name>
 			<Coordinates>
-				<x>1600</x>
+				<x>1300</x>
 				<y>179</y>
 			</Coordinates>
 			<Textures>
