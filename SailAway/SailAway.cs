@@ -15,14 +15,21 @@ namespace SailAway
         SpriteBatch spriteBatch;
         bool playerCollided;
 
+        SpriteFont messageFont;
+
         Camera2d cam = new Camera2d();
 
         const int DEATH_PLANE_HEIGHT = 800;
-
+        bool LevelLoaded;
+        bool GameComplete = false;
 
         Level level;
 
-        string mLevelName = "C:\\Users\\528945\\Documents\\GIT\\repo\\Levels\\Level_1.xml";
+        //string mLevelName = "C:\\Users\\528945\\Documents\\GIT\\repo\\Levels\\Level_1.xml";
+        string basePath = "C:\\Users\\528945\\Documents\\GIT\\repo\\Levels\\";
+        int NumberOfLevels = 1;
+        int LevelIndex = 0;
+        List<String> LevelNameList = new List<String>();
 
         Player player;
 
@@ -38,6 +45,10 @@ namespace SailAway
 
         protected override void Initialize()
         {
+            for(int i = 0; i < NumberOfLevels; i++)
+            {
+                LevelNameList.Add(basePath + "Level_" + (i+1) + ".xml");
+            }
             base.Initialize();
         }
 
@@ -55,9 +66,12 @@ namespace SailAway
 
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            LoadXmlStuff(mLevelName);
-            gameSprites.Add(player);
+            if (!GameComplete) { 
+                messageFont = Content.Load<SpriteFont>("MessageFont");
+                spriteBatch = new SpriteBatch(GraphicsDevice);
+                LoadXmlStuff(LevelNameList[LevelIndex]);
+                gameSprites.Add(player);
+            }
 
         }
 
@@ -69,6 +83,7 @@ namespace SailAway
 
         public void LoadXmlStuff(string levelName)
         {
+            LevelLoaded = false;
             //<SetUp>
             levelPlatformList = new List<Platform>();
             XmlDocument mLevelXml = new XmlDocument();
@@ -99,12 +114,12 @@ namespace SailAway
             Texture2D FlagTextureEnd = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Flags").SelectSingleNode("End").SelectSingleNode("Texture")));
 
             Sprite FlagStartSprite = new Sprite(FlagTextureStart, ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("Start").SelectSingleNode("Coordinates"), "x"), ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("Start").SelectSingleNode("Coordinates"), "y"));
-            Sprite FlagEndSprite = new Sprite(FlagTextureStart, ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("End").SelectSingleNode("Coordinates"), "x"), ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("End").SelectSingleNode("Coordinates"), "y"));
+            Sprite FlagEndSprite = new Sprite(FlagTextureEnd, ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("End").SelectSingleNode("Coordinates"), "x"), ChildNodeIntFromParent(LevelNode.SelectSingleNode("Flags").SelectSingleNode("End").SelectSingleNode("Coordinates"), "y"));
 
             gameSprites.Add(FlagStartSprite);
             gameSprites.Add(FlagEndSprite);
             //</Flags>
-
+            
             //<Platforms>
             foreach (XmlNode lPlatform in LevelNode.SelectSingleNode("Platforms").ChildNodes)
             {
@@ -136,53 +151,89 @@ namespace SailAway
                         levelPlatformList.Add(mPlatformCentre);
                     }
                 }
-                level = new Level(levelPlatformList);
+                level = new Level(levelPlatformList,FlagEndSprite);
             }
+            LevelLoaded = true;
             //</Platforms>
         }
 
         protected override void UnloadContent()
         {
+            Content.Unload();
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (player.CheckForDeath())
-            {
-                ReloadLevel();
-            }
-            KeyboardState keys = Keyboard.GetState();
-            if (keys.IsKeyDown(Keys.Escape))
-            {
-                Exit();
-            }
 
-            if (keys.IsKeyDown(Keys.D))
+            if (LevelLoaded&&!GameComplete)
             {
-                player.SetMoveState("right");
-            }
-            else if (keys.IsKeyDown(Keys.A))
-            {
-                player.SetMoveState("left");
-            }
-            else
-            {
-                player.SetMoveState("stopped");
-            }
-
-            if (keys.IsKeyDown(Keys.Space))
-            {
-                if (player.SetJumpStateIfWeCan())
+                if (player.CheckForDeath())
                 {
-                    playerCollided = false;
+                    ReloadLevel();
+                }
+                KeyboardState keys = Keyboard.GetState();
+                if (keys.IsKeyDown(Keys.Escape))
+                {
+                    Exit();
+                }
+
+                if (keys.IsKeyDown(Keys.D))
+                {
+                    player.SetMoveState("right");
+                }
+                else if (keys.IsKeyDown(Keys.A))
+                {
+                    player.SetMoveState("left");
+                }
+                else
+                {
+                    player.SetMoveState("stopped");
+                }
+
+                if (keys.IsKeyDown(Keys.Space))
+                {
+                    if (player.SetJumpStateIfWeCan())
+                    {
+                        playerCollided = false;
+                    }
+                }
+
+                //Console.WriteLine(player.GetMoveState());
+                //Console.WriteLine(player.GetJumpState());
+                player.Update(1.0f / 60.0f);
+                if (level.CheckEndFlag(player))
+                {
+                    Console.WriteLine("You done did it!");
+                    //LoadNextLevel();
+                    
+                    LevelIndex++;
+                    Console.WriteLine(LevelIndex + "," + NumberOfLevels);
+                    if (LevelIndex == NumberOfLevels)
+                    {
+                        //UnloadContent();
+                        GameComplete = true;
+                        DRAWTHEFUCKINGAMEOVERSCREEN();
+
+                    }
+                    else { 
+                        UnloadContent();
+                        LoadContent();
+                    }
                 }
             }
 
-            //Console.WriteLine(player.GetMoveState());
-            //Console.WriteLine(player.GetJumpState());
-            player.Update(1.0f / 60.0f);
 
-            base.Update(gameTime);
+                base.Update(gameTime);
+
+        }
+
+        private void DRAWTHEFUCKINGAMEOVERSCREEN()
+        {
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+            spriteBatch.Begin();
+
+            spriteBatch.DrawString(messageFont, "You done did it", new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2), Color.Red);
+            spriteBatch.End();
         }
 
         protected void NextLevel()
@@ -192,22 +243,30 @@ namespace SailAway
 
         protected override void Draw(GameTime gameTime)
         {
-            cam.Pos = player.GetPlayerVector();
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(SpriteSortMode.BackToFront,
-                        BlendState.AlphaBlend,
-                        null,
-                        null,
-                        null,
-                        null,
-                        cam.get_transformation(GraphicsDevice));
-            foreach (Sprite s in gameSprites)
+            if (GameComplete)
             {
-                s.Draw(spriteBatch);
+                
             }
-            spriteBatch.End();
-            
+            else { 
+                cam.Pos = player.GetPlayerVector();
+                GraphicsDevice.Clear(Color.CornflowerBlue);
+                spriteBatch.Begin(SpriteSortMode.BackToFront,
+                            BlendState.AlphaBlend,
+                            null,
+                            null,
+                            null,
+                            null,
+                            cam.get_transformation(GraphicsDevice));
+                foreach (Sprite s in gameSprites)
+                {
+                    s.Draw(spriteBatch);
+                }
+                spriteBatch.End();
+                
+            }
+
             base.Draw(gameTime);
+
         }
         public int ChildNodeIntFromParent(XmlNode pParentNode, string pNodeName)
         {

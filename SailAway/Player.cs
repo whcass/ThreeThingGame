@@ -152,7 +152,7 @@ namespace SailAway
 
         public override void Update(float deltaTime)
         {
-            Console.WriteLine(JumpAvailable);
+            
             //Console.WriteLine(currentJumpState);
             MovePlayerIfPossible();
 
@@ -240,10 +240,10 @@ namespace SailAway
             }
         }
 
-        public Rectangle GetRectangle()
-        {
-            return Rectangle;
-        }
+        //public Rectangle GetRectangle()
+        //{
+        //    return Rectangle;
+        //}
 
         public void AddTexture(Texture2D pTexture)//Anime desu
         {

@@ -21,7 +21,7 @@ namespace SailAway
             Texture = texture;
             XPos = xPos;
             YPos = yPos;
-            Rectangle = new Rectangle(0, 0, texture.Width, texture.Height);
+            Rectangle = new Rectangle((int)xPos, (int)yPos, texture.Width, texture.Height);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
@@ -34,6 +34,11 @@ namespace SailAway
         public virtual void Update(float deltaTime)
         {
 
+        }
+
+        public Rectangle GetRectangle()
+        {
+            return Rectangle;
         }
     }
 }

@@ -3,7 +3,7 @@
 	<Player>
 		<StartPos>
 			<x>0</x>
-			<y>448</y>
+			<y>400</y>
 		</StartPos>
 		<Textures>
 			<Idle_1>PC_Idle_1</Idle_1>
@@ -18,14 +18,14 @@
 		<Start>
 			<Coordinates>
 				<x>0</x>
-				<y>448</y>
+				<y>400</y>
 			</Coordinates>
 			<Texture>FlagStart</Texture>
 		</Start>
 		<End>
 			<Coordinates>
-				<x>4871</x>
-				<y>535</y>
+				<x>4232</x>
+				<y>256</y>
 			</Coordinates>
 			<Texture>FlagEnd</Texture>
 		</End>
@@ -42,12 +42,12 @@
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>3</Length>
+			<Length>2</Length>
 		</Platform>
 		<Platform>
 			<Name>Platform 2</Name>
 			<Coordinates>
-				<x>151</x>
+				<x>180</x>
 				<y>384</y>
 			</Coordinates>
 			<Textures>
@@ -57,10 +57,10 @@
 			</Textures>
 			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 3</Name>
 			<Coordinates>
-				<x>245</x>
+				<x>450</x>
 				<y>424</y>
 			</Coordinates>
 			<Textures>
@@ -68,12 +68,12 @@
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>4</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 4</Name>
 			<Coordinates>
-				<x>400</x>
+				<x>650</x>
 				<y>369</y>
 			</Coordinates>
 			<Textures>
@@ -81,12 +81,12 @@
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>7</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 5</Name>
 			<Coordinates>
-				<x>634</x>
+				<x>850</x>
 				<y>299</y>
 			</Coordinates>
 			<Textures>
@@ -94,12 +94,12 @@
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>5</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 6</Name>
 			<Coordinates>
-				<x>844</x>
+				<x>1100</x>
 				<y>284</y>
 			</Coordinates>
 			<Textures>
@@ -107,12 +107,12 @@
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>7</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 7</Name>
 			<Coordinates>
-				<x>1100</x>
+				<x>1350</x>
 				<y>314</y>
 			</Coordinates>
 			<Textures>
@@ -120,12 +120,12 @@
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>5</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 8</Name>
 			<Coordinates>
-				<x>1280</x>
+				<x>1550</x>
 				<y>249</y>
 			</Coordinates>
 			<Textures>
@@ -133,12 +133,12 @@
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>9</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 9</Name>
 			<Coordinates>
-				<x>1600</x>
+				<x>1750</x>
 				<y>179</y>
 			</Coordinates>
 			<Textures>
@@ -148,50 +148,50 @@
 			</Textures>
 			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 10</Name>
 			<Coordinates>
-				<x>1700</x>
-				<y>219</y>
+				<x>2000</x>
+				<y>384</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>6</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 11</Name>
 			<Coordinates>
-				<x>1952</x>
-				<y>189</y>
+				<x>2150</x>
+				<y>320</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>4</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 12</Name>
 			<Coordinates>
-				<x>2139</x>
-				<y>243</y>
+				<x>2350</x>
+				<y>384</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
 				<Right>Platform_Right</Right>
 				<Centre>Platform_Centre</Centre>
 			</Textures>
-			<Length>7</Length>
+			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 13</Name>
 			<Coordinates>
-				<x>2433</x>
-				<y>183</y>
+				<x>2520</x>
+				<y>288</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -200,11 +200,11 @@
 			</Textures>
 			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 14</Name>
 			<Coordinates>
-				<x>2497</x>
-				<y>215</y>
+				<x>2800</x>
+				<y>384</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -213,11 +213,11 @@
 			</Textures>
 			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 15</Name>
 			<Coordinates>
-				<x>2561</x>
-				<y>247</y>
+				<x>3050</x>
+				<y>384</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -226,11 +226,11 @@
 			</Textures>
 			<Length>2</Length>
 		</Platform>
-		<Platform>
+				<Platform>
 			<Name>Platform 16</Name>
 			<Coordinates>
-				<x>2625</x>
-				<y>279</y>
+				<x>3350</x>
+				<y>448</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -242,8 +242,8 @@
 		<Platform>
 			<Name>Platform 17</Name>
 			<Coordinates>
-				<x>2689</x>
-				<y>247</y>
+				<x>3550</x>
+				<y>384</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -255,8 +255,8 @@
 		<Platform>
 			<Name>Platform 18</Name>
 			<Coordinates>
-				<x>2753</x>
-				<y>215</y>
+				<x>3780</x>
+				<y>384</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -268,8 +268,8 @@
 		<Platform>
 			<Name>Platform 19</Name>
 			<Coordinates>
-				<x>2817</x>
-				<y>183</y>
+				<x>4000</x>
+				<y>352</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -281,86 +281,8 @@
 		<Platform>
 			<Name>Platform 20</Name>
 			<Coordinates>
-				<x>3081</x>
-				<y>383</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>5</Length>
-			</Platform>
-		<Platform>
-			<Name>Platform 21</Name>
-			<Coordinates>
-				<x>3297</x>
-				<y>353</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>7</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 22</Name>
-			<Coordinates>
-				<x>3613</x>
-				<y>298</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>5</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 23</Name>
-			<Coordinates>
-				<x>3806</x>
-				<y>236</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>4</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 24</Name>
-			<Coordinates>
-				<x>4010</x>
-				<y>203</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>4</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 25</Name>
-			<Coordinates>
-				<x>4202</x>
-				<y>157</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>3</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 26</Name>
-			<Coordinates>
-				<x>4310</x>
-				<y>307</y>
+				<x>4200</x>
+				<y>288</y>
 			</Coordinates>
 			<Textures>
 				<Left>Platform_Left</Left>
@@ -368,58 +290,6 @@
 				<Centre>Platform_Centre</Centre>
 			</Textures>
 			<Length>2</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 27</Name>
-			<Coordinates>
-				<x>4494</x>
-				<y>363</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>3</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 28</Name>
-			<Coordinates>
-				<x>4669</x>
-				<y>395</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>2</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 29</Name>
-			<Coordinates>
-				<x>4766</x>
-				<y>471</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>6</Length>
-		</Platform>
-		<Platform>
-					<Name>Platform 30</Name>
-			<Coordinates>
-				<x>4999</x>
-				<y>567</y>
-			</Coordinates>
-			<Textures>
-				<Left>Platform_Left</Left>
-				<Right>Platform_Right</Right>
-				<Centre>Platform_Centre</Centre>
-			</Textures>
-			<Length>5</Length>
 		</Platform>
 	</Platforms>
 </Level>

@@ -9,11 +9,13 @@ namespace SailAway
     class Level
     {
         private static List<Platform> Platforms;
+        private static Sprite EndFlag;
         public static Level CurrentLevel { get; private set; }
-        public Level(List<Platform> platformsList)
+        public Level(List<Platform> platformsList,Sprite endFlag)
         {
             Platforms = platformsList;
             Level.CurrentLevel = this;
+            EndFlag = endFlag;
         }
 
         public bool CheckPlatformCollisions(Player player)
@@ -33,6 +35,20 @@ namespace SailAway
             }
             
             return playerCollided;
+        }
+
+        public bool CheckEndFlag(Player player)
+        {
+            //Console.WriteLine("Player" + player.GetRectangle().X + "," + player.GetRectangle().Y);
+            //Console.WriteLine("End Flag"+EndFlag.GetRectangle().X + "," + EndFlag.GetRectangle().Y);
+            if (EndFlag.GetRectangle().Intersects(player.GetRectangle()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
