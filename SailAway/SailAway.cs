@@ -14,7 +14,7 @@ namespace SailAway
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        string mLevelName = "C:\\Users\\528945\\Documents\\GIT\\repo\\Levels\\Level_1.xml";
+        string mLevelName = "C:\\Users\\Leo\\Documents\\University\\First Year\\3TG\\repo\\Levels\\Level_2.xml";
 
         Player player;
 
