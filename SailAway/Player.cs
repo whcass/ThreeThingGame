@@ -66,25 +66,30 @@ namespace SailAway
                         XPos = newXPos;
                     }
                     else {
-                        XPos = oldXPos - 5;
+                        XPos = oldXPos - 1 * moveSpeed;
                     }
 
-                    Console.WriteLine(XPos);
+                    
                     break;
                 case MoveState.MovingRight:
                     newXPos = XPos + 1 * moveSpeed;
-                    Console.WriteLine(XPos);
+                    
                     if (!Level.CurrentLevel.CheckPlatformCollisions(this))
                     {
                         XPos = newXPos;
                     }
                     else
                     {
-                        XPos = oldXPos + 5;
+                        XPos = oldXPos + 1*moveSpeed;
                     }
 
                     break;
             }
+        }
+
+        public Vector2 GetPlayerVector()
+        {
+            return new Vector2(XPos, YPos);
         }
 
         private void JumpPlayerIfPossible()
@@ -112,14 +117,15 @@ namespace SailAway
                         }
                         else
                         {
-                            YPos = oldYpos - 5;
+                            YPos = oldYpos - 8;
                             currentJumpState = JumpState.Landed;
+                            JumpAvailable = true;
                         }
                     }
                     else
                     {
                         currentJumpState = JumpState.Landed;
-                        JumpAvailable = true;
+                        
                     }
                     break;
 
@@ -133,9 +139,12 @@ namespace SailAway
 
         public override void Update(float deltaTime)
         {
-            Console.WriteLine(currentJumpState);
+            Console.WriteLine(JumpAvailable);
+            //Console.WriteLine(currentJumpState);
             MovePlayerIfPossible();
+
             JumpPlayerIfPossible();
+            
             if (currentJumpState == JumpState.Landed)
             {
                 JumpAvailable = true;
@@ -150,7 +159,7 @@ namespace SailAway
 
         public bool SetJumpStateIfWeCan()
         {
-            if (JumpAvailable)
+            if (JumpAvailable&&(currentJumpState==JumpState.Landed))
             {
                 JumpAvailable = false;
                 floor = YPos;

@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera2D.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Platform.cs" />

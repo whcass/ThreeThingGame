@@ -3,7 +3,7 @@
 	<Player>
 		<StartPos>
 			<x>0</x>
-			<y>415</y>
+			<y>410</y>
 		</StartPos>
 		<Textures>
 			<Idle_1>PC_Idle_1</Idle_1>

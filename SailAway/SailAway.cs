@@ -15,6 +15,11 @@ namespace SailAway
         SpriteBatch spriteBatch;
         bool playerCollided;
 
+        Camera2d cam = new Camera2d();
+        
+
+
+
         Level level;
 
         string mLevelName = "C:\\Users\\528945\\Documents\\GIT\\repo\\Levels\\Level_1.xml";
@@ -146,9 +151,16 @@ namespace SailAway
 
         protected override void Draw(GameTime gameTime)
         {
+            cam.Pos = player.GetPlayerVector();
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
-            foreach(Sprite s in gameSprites)
+            spriteBatch.Begin(SpriteSortMode.BackToFront,
+                        BlendState.AlphaBlend,
+                        null,
+                        null,
+                        null,
+                        null,
+                        cam.get_transformation(GraphicsDevice));
+            foreach (Sprite s in gameSprites)
             {
                 s.Draw(spriteBatch);
             }
