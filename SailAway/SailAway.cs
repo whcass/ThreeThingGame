@@ -13,12 +13,21 @@ namespace SailAway
         public XmlDocument mLevelXml;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        bool playerCollided;
+
+        Camera2d cam = new Camera2d();
+        
+
+
+
+        Level level;
 
         string mLevelName = "C:\\Users\\Leo\\Documents\\University\\First Year\\3TG\\repo\\Levels\\Level_2.xml";
 
         Player player;
 
         List<Sprite> gameSprites = new List<Sprite>();
+        List<Platform> levelPlatformList;
 
         public SailAway()
         {
@@ -47,8 +56,6 @@ namespace SailAway
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Texture2D playerTexture = GenerateRedBox(32,32);
-            player = new Player(playerTexture, 100, 100);
             LoadXmlStuff();
             gameSprites.Add(player);
 
@@ -56,16 +63,49 @@ namespace SailAway
 
         public void LoadXmlStuff()
         {
+            levelPlatformList = new List<Platform>();
             XmlDocument mLevelXml = new XmlDocument();
             mLevelXml.Load(mLevelName);
             XmlNode LevelNode = mLevelXml.FirstChild.NextSibling;
+
+            Texture2D playerTexture = Content.Load<Texture2D>(NodeString(LevelNode.SelectSingleNode("Player").SelectSingleNode("Textures").SelectSingleNode("Idle_1")));
+            player = new Player(playerTexture, ChildNodeIntFromParent(LevelNode.SelectSingleNode("Player").SelectSingleNode("StartPos"), "x"), ChildNodeIntFromParent(LevelNode.SelectSingleNode("Player").SelectSingleNode("StartPos"), "y"));
+
 
             foreach (XmlNode lPlatform in LevelNode.SelectSingleNode("Platforms").ChildNodes)
             {
                 Texture2D mTexture = Content.Load<Texture2D>("Yellow3232");
                 XmlNode CoordinatesNode = lPlatform.SelectSingleNode("Coordinates");//I think it's more effecient to store this location and not write it out four times in the line below but idk.
-                Platform platform = new Platform(mTexture, ChildNodeIntFromParent(CoordinatesNode,"x"), ChildNodeIntFromParent(CoordinatesNode, "y"), ChildNodeIntFromParent(lPlatform, "Length"));
-                gameSprites.Add(platform);
+
+                Texture2D mTextureLeft = Content.Load<Texture2D>(NodeString(lPlatform.SelectSingleNode("Textures").SelectSingleNode("Left")));
+                Texture2D mTextureRight = Content.Load<Texture2D>(NodeString(lPlatform.SelectSingleNode("Textures").SelectSingleNode("Right")));
+                Texture2D mTextureCentre = Content.Load<Texture2D>(NodeString(lPlatform.SelectSingleNode("Textures").SelectSingleNode("Centre")));
+
+                int PlatformLength = ChildNodeIntFromParent(lPlatform, "Length");
+                for (int i = 0; i < PlatformLength; i++)
+                {
+                    if (i == 0)
+                    {
+                        Platform mPlatformLeft = new Platform(mTextureLeft, ChildNodeIntFromParent(CoordinatesNode, "x"), ChildNodeIntFromParent(CoordinatesNode, "y"), ChildNodeIntFromParent(lPlatform, "Length"));
+                        gameSprites.Add(mPlatformLeft);
+                        levelPlatformList.Add(mPlatformLeft);
+                    }
+                    else if (i == PlatformLength - 1)
+                    {
+                        Platform mPlatformRight = new Platform(mTextureRight, ChildNodeIntFromParent(CoordinatesNode, "x") + (32 * i), ChildNodeIntFromParent(CoordinatesNode, "y"), ChildNodeIntFromParent(lPlatform, "Length"));
+                        gameSprites.Add(mPlatformRight);
+                        levelPlatformList.Add(mPlatformRight);
+                    }
+                    else
+                    {
+                        Platform mPlatformCentre = new Platform(mTextureCentre, ChildNodeIntFromParent(CoordinatesNode, "x") + (32 * i), ChildNodeIntFromParent(CoordinatesNode, "y"), ChildNodeIntFromParent(lPlatform, "Length"));
+                        gameSprites.Add(mPlatformCentre);
+                        levelPlatformList.Add(mPlatformCentre);
+                    }
+                }
+                //Platform platform = new Platform(mTexture, ChildNodeIntFromParent(CoordinatesNode, "x"), ChildNodeIntFromParent(CoordinatesNode, "y"), ChildNodeIntFromParent(lPlatform, "Length"));
+                //gameSprites.Add(platform);
+                level = new Level(levelPlatformList);
             }
         }
 
@@ -74,7 +114,7 @@ namespace SailAway
         }
 
         protected override void Update(GameTime gameTime)
-        {
+        {                        
             KeyboardState keys = Keyboard.GetState();
             if (keys.IsKeyDown(Keys.Escape))
             {
@@ -96,7 +136,10 @@ namespace SailAway
 
             if (keys.IsKeyDown(Keys.Space))
             {
-                player.SetJumpStateIfWeCan();
+                if (player.SetJumpStateIfWeCan())
+                {
+                    playerCollided = false;
+                }
             }
 
             //Console.WriteLine(player.GetMoveState());
@@ -108,9 +151,16 @@ namespace SailAway
 
         protected override void Draw(GameTime gameTime)
         {
+            cam.Pos = player.GetPlayerVector();
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
-            foreach(Sprite s in gameSprites)
+            spriteBatch.Begin(SpriteSortMode.BackToFront,
+                        BlendState.AlphaBlend,
+                        null,
+                        null,
+                        null,
+                        null,
+                        cam.get_transformation(GraphicsDevice));
+            foreach (Sprite s in gameSprites)
             {
                 s.Draw(spriteBatch);
             }
