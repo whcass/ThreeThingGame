@@ -27,7 +27,7 @@ namespace SailAway
                     Console.WriteLine("We have collided with platform:" + p);
                     playerCollided = true;
                     collidingPlatform = p;
-                    player.SetPlayerCollidedWithFloor(true);
+                    //player.SetPlayerCollidedWithFloor(true);
                 }
 
             }

@@ -56,36 +56,41 @@ namespace SailAway
         private void MovePlayerIfPossible()
         {
             float oldXPos = XPos;
+            float newXPos;
             switch (currentMoveState)
             {
                 case MoveState.MovingLeft:
+                    newXPos = XPos - 1 * moveSpeed;
                     if (!Level.CurrentLevel.CheckPlatformCollisions(this))
                     {
-                        XPos -= 1 * moveSpeed;
+                        XPos = newXPos;
                     }
                     else {
-                        XPos = oldXPos;
+                        XPos = oldXPos - 5;
                     }
 
                     Console.WriteLine(XPos);
                     break;
                 case MoveState.MovingRight:
+                    newXPos = XPos + 1 * moveSpeed;
                     Console.WriteLine(XPos);
                     if (!Level.CurrentLevel.CheckPlatformCollisions(this))
                     {
-                        XPos += 1 * moveSpeed;
+                        XPos = newXPos;
                     }
                     else
                     {
-                        XPos = oldXPos;
+                        XPos = oldXPos + 5;
                     }
 
                     break;
             }
         }
 
-        private void PlayerJumping()
+        private void JumpPlayerIfPossible()
         {
+            float oldYpos = YPos;
+            float newYpos;
             switch (currentJumpState)
             {
                 case JumpState.Jumping:
@@ -101,11 +106,13 @@ namespace SailAway
                 case JumpState.Falling:
                     if (YPos <= floor)
                     {
+                        newYpos = YPos + 1 * fallSpeed;
                         if (!Level.CurrentLevel.CheckPlatformCollisions(this)) {
-                            YPos += 1 * fallSpeed;
+                            YPos = newYpos;
                         }
                         else
                         {
+                            YPos = oldYpos - 5;
                             currentJumpState = JumpState.Landed;
                         }
                     }
@@ -128,9 +135,10 @@ namespace SailAway
         {
             Console.WriteLine(currentJumpState);
             MovePlayerIfPossible();
-            PlayerJumping();
+            JumpPlayerIfPossible();
             if (currentJumpState == JumpState.Landed)
             {
+                JumpAvailable = true;
                 AffectPlayerWithGravity();
             }
         }
@@ -181,13 +189,20 @@ namespace SailAway
         //    return false;
         //}
 
-        
+
 
         public void AffectPlayerWithGravity()
         {
-            if (gravityOn&& !Level.CurrentLevel.CheckPlatformCollisions(this))
+            float newYPos = YPos + 1 * fallSpeed;
+            float oldYPos = YPos;
+            if (gravityOn && !Level.CurrentLevel.CheckPlatformCollisions(this))
             {
-                YPos += 1*fallSpeed;
+                YPos = newYPos;
+            }
+            else
+            {
+                // gravityOn = false;
+                YPos = oldYPos;
             }
         }
 
